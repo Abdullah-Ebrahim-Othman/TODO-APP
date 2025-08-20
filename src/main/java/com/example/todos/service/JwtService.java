@@ -1,0 +1,14 @@
+package com.example.todos.service;
+
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Map;
+
+public interface JwtService {
+
+    String extractUsername(String token);
+
+    boolean isTokenValid(String Token, UserDetails userDetails);
+
+    String generateToken(Map<String, Object> claims, UserDetails userDetails);
+}
